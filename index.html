@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body onload="myFunction()">
+    <h1>Hello World!</h1>
+
+    <div>A shareholder is a</div>
+    <input id="q1" />
+    <button onclick="handleSave()">Copy To Clipboard</button>
+    <a href="" id="saveLink">Test Link</a>
+
+    <script>
+      function myFunction() {
+        console.log("Body Loaded");
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        console.log(params);
+
+        const q1 = document.getElementById("q1");
+        q1.value = params["q1"] || "";
+        // alert("Page is loaded");
+      }
+    </script>
+
+    <script>
+      function handleSave() {
+        const q1Value = document.getElementById("q1").value;
+        const saveLink = document.getElementById("saveLink");
+        let URL = `${window.location.protocol}//${window.location.host}/?q1=${q1Value}`;
+        URL = encodeURI(URL);
+        console.log("href:", URL);
+        saveLink.href = URL;
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(URL);
+      }
+    </script>
+  </body>
+</html>
