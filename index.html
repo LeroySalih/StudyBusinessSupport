@@ -31,8 +31,6 @@
         const q2 = document.getElementById("q2");
         q2.value = params["q2"] || "";
         
-        
-        // alert("Page is loaded");
       }
     </script>
 
@@ -48,9 +46,10 @@
         let URL = `${window.location.protocol}//${window.location.host}/StudyBusinessSupport/index.html?q1=${q1Value}&q2=${q2Value}`;
         URL = encodeURI(URL);
         
+        // display the link to console to debug
         console.log(URL)
         
-        /* Copy the text inside the text field */
+        /* Copy the link to the clipboard */
         navigator.clipboard.writeText(URL);
       }
     </script>
