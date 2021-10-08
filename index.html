@@ -48,6 +48,7 @@
         let URL = `${window.location.protocol}//${window.location.host}/StudyBusinessSupport/index.html?q1=${q1Value}&q2=${q2Value}`;
         URL = encodeURI(URL);
         
+        console.log(URL)
         
         /* Copy the text inside the text field */
         navigator.clipboard.writeText(URL);
