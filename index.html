@@ -10,25 +10,41 @@
 
     <script>
       function myFunction() {
+        
         console.log("Body Loaded");
+        
+        // Get the params from the query string
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries());
+        
+        // Display the params from the querystring
         console.log(params);
 
+        // populate the form fields
         const q1 = document.getElementById("q1");
         q1.value = params["q1"] || "";
+        
+        const q2 = document.getElementById("q2");
+        q2.value = params["q1"] || "";
+        
+        
         // alert("Page is loaded");
       }
     </script>
 
     <script>
       function handleSave() {
+        // Get Form Values
         const q1Value = document.getElementById("q1").value;
-        const saveLink = document.getElementById("saveLink");
-        let URL = `${window.location.protocol}//${window.location.host}/StudyBusinessSupport/index.html?q1=${q1Value}`;
+        
+        // 
+        const q2Value = document.getElementById("q1").value;
+        
+        // Build the URL
+        let URL = `${window.location.protocol}//${window.location.host}/StudyBusinessSupport/index.html?q1=${q1Value}&q2=${q2Value}`;
         URL = encodeURI(URL);
-        console.log("href:", URL);
-        saveLink.href = URL;
+        
+        
         /* Copy the text inside the text field */
         navigator.clipboard.writeText(URL);
       }
