@@ -25,7 +25,7 @@
       function handleSave() {
         const q1Value = document.getElementById("q1").value;
         const saveLink = document.getElementById("saveLink");
-        let URL = `${window.location.protocol}//${window.location.host}/?q1=${q1Value}`;
+        let URL = `${window.location.protocol}//${window.location.host}/StudyBusinessSupport/index.html?q1=${q1Value}`;
         URL = encodeURI(URL);
         console.log("href:", URL);
         saveLink.href = URL;
